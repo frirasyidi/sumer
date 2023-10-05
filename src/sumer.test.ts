@@ -84,7 +84,31 @@ describe("sumer will add numbers with the same key on an object", () => {
   });
 
   it("should add number to object with key 0 when not available", () => {
-    const result = sumer({ pineapple: 22, apple: 2 }, 25);
-    expect(result).toEqual({ pineapple: 22, apple: 2, "0": 25 });
+    const result = sumer({ pineapple: 22, apple: 2 }, 25, 4, 2);
+    expect(result).toEqual({ pineapple: 22, apple: 2, "0": 31 });
+  });
+
+  it("should add numbers, arrays, and object like its summer!", () => {
+    const result = sumer(
+      { pineapple: 22, apple: 2 },
+      25,
+      -4,
+      2,
+      [-24, 12, 1],
+      { pineapple: 4, mango: 3, mangosteen: 2, "4": -10 },
+      [1, -2, 3, 0, -9, 8]
+    );
+    expect(result).toEqual({
+      pineapple: 26,
+      apple: 2,
+      "0": 0,
+      "1": 10,
+      "2": 4,
+      mango: 3,
+      mangosteen: 2,
+      "3": 0,
+      "4": -19,
+      "5": 8,
+    });
   });
 });
