@@ -55,4 +55,9 @@ describe("sumer will add numbers in the same index from given arrays", () => {
     );
     expect(result).toEqual([36, 20, 2, 51, 13, 18, 20]);
   });
+
+  it("should add number as index 0 item in the array", () => {
+    const result = sumer(1, [2, 3], 4, [5, 6, 7]);
+    expect(result).toEqual([12, 9, 7]);
+  });
 });
