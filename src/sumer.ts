@@ -1,9 +1,13 @@
-function sumer (...numbers:number[]):number {
-  let result:number=0
-  numbers.forEach(number=>{
-    result +=number
-  })
-  return result
+function sumer(...toAdd: (number | number[])[]): number | number[] {
+  let result: number | number[] = 0;
+  toAdd.forEach((each) => {
+    if (Array.isArray(each)) result = each;
+    if (typeof each === "number") {
+      if (Array.isArray(result)) result[0] += each;
+      else result += each;
+    }
+  });
+  return result;
 }
 
-export {sumer}
+export { sumer };
