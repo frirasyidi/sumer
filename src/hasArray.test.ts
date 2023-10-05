@@ -10,4 +10,9 @@ describe("hasArray will check a given array has an array in it", () => {
     const result = hasArray(1, 2, 3, 4, 5);
     expect(result).toBe(false);
   });
+
+  it("should return true if all items given are arrays", () => {
+    const result = hasArray([1], [2], [3], [4], [5]);
+    expect(result).toBe(true);
+  });
 });
