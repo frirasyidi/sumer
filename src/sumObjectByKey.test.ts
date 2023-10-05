@@ -10,4 +10,12 @@ describe("sumObjectByKey will sum values from the same key from two different ob
     const result = sumObjectByKey({ apple: 1 }, { mango: 2 });
     expect(result).toEqual({ apple: 1, mango: 2 });
   });
+
+  it("should sum the object with different length and keys", () => {
+    const result = sumObjectByKey(
+      { apple: 1, lychee: 29 },
+      { mango: 2, papaya: 12 }
+    );
+    expect(result).toEqual({ apple: 1, lychee: 29, mango: 2, papaya: 12 });
+  });
 });
