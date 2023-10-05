@@ -38,4 +38,9 @@ describe("sumer will add numbers in the same index from given arrays", () => {
     const result = sumer([1, 2, 3, 4, 5]);
     expect(result).toEqual([1, 2, 3, 4, 5]);
   });
+
+  it("should add same-indexed number for two arrays", () => {
+    const result = sumer([1, 2, 3], [4, 5]);
+    expect(result).toEqual([5, 7, 3]);
+  });
 });
