@@ -10,4 +10,9 @@ describe("objectify will turn number and array to object", () => {
     const result = objectify(8);
     expect(result).toEqual({ "0": 8 });
   });
+
+  it("should change an array to object using index as key", () => {
+    const result = objectify([8, 7, 6, 5]);
+    expect(result).toEqual({ "0": 8, "1": 7, "2": 6, "3": 5 });
+  });
 });
