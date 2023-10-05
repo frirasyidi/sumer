@@ -61,3 +61,10 @@ describe("sumer will add numbers in the same index from given arrays", () => {
     expect(result).toEqual([12, 9, 7]);
   });
 });
+
+describe("sumer will add numbers with the same key on an object", () => {
+  it("should return the object if no others are given", () => {
+    const result = sumer({ a: 1, b: 2, c: 3 });
+    expect(result).toEqual({ a: 1, b: 2, c: 3 });
+  });
+});
