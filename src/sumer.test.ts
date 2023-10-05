@@ -77,4 +77,9 @@ describe("sumer will add numbers with the same key on an object", () => {
     const result = sumer({ "0": 1, apple: 2 }, [3, 4, 5]);
     expect(result).toEqual({ "0": 4, apple: 2, "1": 4, "2": 5 });
   });
+
+  it("should add number to object with key 0 when available", () => {
+    const result = sumer({ "0": 1, apple: 2 }, 25);
+    expect(result).toEqual({ "0": 26, apple: 2 });
+  });
 });
