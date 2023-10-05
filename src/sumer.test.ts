@@ -43,4 +43,16 @@ describe("sumer will add numbers in the same index from given arrays", () => {
     const result = sumer([1, 2, 3], [4, 5]);
     expect(result).toEqual([5, 7, 3]);
   });
+
+  it("should add same-indexed number for many arrays", () => {
+    const result = sumer(
+      [1, 2, 3],
+      [4, 5],
+      [18, 0, -9, 23, 13, 18, 20],
+      [1],
+      [12, 13, 8],
+      [0, 0, 0, 28]
+    );
+    expect(result).toEqual([36, 20, 2, 51, 13, 18, 20]);
+  });
 });

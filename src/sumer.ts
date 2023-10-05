@@ -33,12 +33,14 @@ function turnToArray(item: number | number[]) {
  * @returns number[]
  */
 function sumArrayByIndex(a: number[], b: number[]): number[] {
-  a.forEach((number) => {
-    const numberIndex = a.indexOf(number);
-    if (b[numberIndex]) b[numberIndex] += number;
-    else b[numberIndex] = number;
-  });
-  return b;
+  let result: number[] = [];
+  let maxArrayLength = Math.max(a.length, b.length);
+
+  for (let i = 0; i < maxArrayLength; i++) {
+    const total = (a[i] || 0) + (b[i] || 0);
+    result.push(total);
+  }
+  return result;
 }
 
 export { sumer };
