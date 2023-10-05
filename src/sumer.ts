@@ -54,31 +54,4 @@ function isArrayObject(object: { [key: string]: number }): boolean {
   return isArray;
 }
 
-/**
- * Turn number to array when necessary. Will do nothing given an array.
- * @param item number | number[]
- * @returns number[]
- */
-function turnToArray(item: number | number[]) {
-  if (Array.isArray(item)) return item;
-  return [item];
-}
-
-/**
- * Adds each index of array a to array b.
- * @param a number[]
- * @param b number[]
- * @returns number[]
- */
-function sumArrayByIndex(a: number[], b: number[]): number[] {
-  let result: number[] = [];
-  let maxArrayLength = Math.max(a.length, b.length);
-
-  for (let i = 0; i < maxArrayLength; i++) {
-    const total = (a[i] || 0) + (b[i] || 0);
-    result.push(total);
-  }
-  return result;
-}
-
 export { sumer };

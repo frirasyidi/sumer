@@ -72,4 +72,9 @@ describe("sumer will add numbers with the same key on an object", () => {
     const result = sumer({ a: 1, b: 2 }, { a: 3, c: 4 });
     expect(result).toEqual({ a: 4, b: 2, c: 4 });
   });
+
+  it("should add array value to object with the same key to the array's index", () => {
+    const result = sumer({ "0": 1, apple: 2 }, [3, 4, 5]);
+    expect(result).toEqual({ "0": 4, apple: 2, "1": 4, "2": 5 });
+  });
 });
