@@ -5,4 +5,9 @@ describe('sumer will add given numbers together',()=>{
     const result = sumer(25);
     expect(result).toBe(25)
   });
+
+  it('should add two numbers together', ()=>{
+    const result = sumer(40,37)
+    expect(result).toBe(77)
+  })
 })
