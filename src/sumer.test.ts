@@ -67,4 +67,9 @@ describe("sumer will add numbers with the same key on an object", () => {
     const result = sumer({ a: 1, b: 2, c: 3 });
     expect(result).toEqual({ a: 1, b: 2, c: 3 });
   });
+
+  it("should return the sum when two objects are given", () => {
+    const result = sumer({ a: 1, b: 2 }, { a: 3, c: 4 });
+    expect(result).toEqual({ a: 4, b: 2, c: 4 });
+  });
 });
